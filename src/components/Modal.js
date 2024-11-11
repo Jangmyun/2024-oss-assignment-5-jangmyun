@@ -1,12 +1,16 @@
+import useModalStore from "../store/modalStore";
 import modalStyles from "../styles/Modal.module.css";
 
 function Modal() {
+  const { isModalOpened, toggleModal } = useModalStore();
+
+  if (!isModalOpened) return null;
+
   return (
-    <div className={modalStyles.overlay}>
-      <div className={modalStyles.container}>
-        <h1>dldldldl</h1>
-        <p>dlkfjsdlfkjsldkfsldkjflsdkjflks</p>
-      </div>
+    <div className={modalStyles.overlay} onClick={toggleModal}>
+      <div className={modalStyles.container}></div>
     </div>
   );
 }
+
+export default Modal;
