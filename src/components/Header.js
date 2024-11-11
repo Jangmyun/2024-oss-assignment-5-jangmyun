@@ -1,11 +1,11 @@
-import styles from "../styles/Header.module.css";
+import headerStyles from "../styles/Header.module.css";
+import publicStyles from "../styles/public.module.css";
 
 function Header() {
-  console.log(styles);
   return (
-    <header className={styles.header}>
+    <header className={headerStyles.header}>
       <h1>Product management</h1>
-      <button id="dataFetchBtn">Fetch Product Data</button>
+      <button className={publicStyles.button}>Fetch Product Data</button>
     </header>
   );
 }
