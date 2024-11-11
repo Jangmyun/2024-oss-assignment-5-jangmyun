@@ -1,8 +1,11 @@
+import publicStyles from "../styles/public.module.css";
+import controlPanelStyles from "../styles/ControlPanel.module.css";
+
 function ControlPanel() {
   return (
-    <div className="controlPanel">
-      <button>Add</button>
-      <button>Update</button>
+    <div className={controlPanelStyles.controlPanel}>
+      <button className={publicStyles.button}>Add</button>
+      <button className={publicStyles.button}>Update</button>
     </div>
   );
 }
