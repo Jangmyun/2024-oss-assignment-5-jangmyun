@@ -1,4 +1,10 @@
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-family: "Black Han Sans";
+  }
 }
