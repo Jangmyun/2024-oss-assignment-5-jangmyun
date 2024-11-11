@@ -1,13 +1,13 @@
 import Header from "./components/Header";
 import ControlPanel from "./components/ControlPanel";
 
-function App() {
+function ShowList() {
   return (
-    <div className="App">
+    <div>
       <Header></Header>
       <ControlPanel></ControlPanel>
     </div>
   );
 }
 
-export default App;
+export default ShowList;
