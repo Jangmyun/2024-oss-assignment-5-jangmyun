@@ -1,0 +1,10 @@
+.controlPanel {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: left;
+
+  button {
+    margin-right: 2rem;
+  }
+}
