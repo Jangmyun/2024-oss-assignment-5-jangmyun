@@ -8,7 +8,8 @@ function AddForm() {
   const { addFormData, setAddFormData, resetAddFormData } = useAddFormStore();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { id, value } = e.target;
+    setAddFormData(id, value);
   };
 
   return (
@@ -26,10 +27,32 @@ function AddForm() {
         </button>
       </div>
       <form>
-        <input type="text" name="p-name" placeholder="Product Name" />
-        <input type="number" name="p-price" placeholder="Product Price" />
-        <input type="number" name="p-stock" placeholder="Stock" />
-        <select name="p-type" id="p-type">
+        <label htmlFor="p-name">Product Name</label>
+        <input
+          id="p_name"
+          type="text"
+          placeholder="Product Name"
+          value={addFormData.p_name}
+          onChange={handleChange}
+        />
+        <label htmlFor="p-price">Price</label>
+        <input
+          type="number"
+          id="p_price"
+          placeholder="Product Price"
+          value={addFormData.p_price}
+          onChange={handleChange}
+        />
+        <label htmlFor="p-price">Stock</label>
+        <input
+          type="number"
+          id="p_stock"
+          placeholder="Stock"
+          value={addFormData.p_stock}
+          onChange={handleChange}
+        />
+        <label htmlFor="p-price">Type</label>
+        <select id="p_type" value={addFormData.p_type} onChange={handleChange}>
           <option value="desktop">Desktop</option>
           <option value="laptop">Laptop</option>
           <option value="smartphone">Smart Phone</option>
@@ -37,7 +60,14 @@ function AddForm() {
           <option value="audio-equipment">Audio Equipment</option>
         </select>
         <div className={modalStyles.submitBtnContainer}>
-          <button className={publicStyles.button}>Submit</button>
+          <button
+            className={publicStyles.button}
+            onClick={() => {
+              resetAddFormData();
+            }}
+          >
+            Submit
+          </button>
         </div>
       </form>
     </>
