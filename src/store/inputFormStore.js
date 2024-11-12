@@ -5,7 +5,7 @@ const useAddFormStore = create((set) => ({
     name: "",
     price: 0,
     stock: 0,
-    type: "",
+    type: "Desktop",
   },
   setAddFormData: (field, value) =>
     set((state) => ({
@@ -15,21 +15,21 @@ const useAddFormStore = create((set) => ({
   resetFormData: () =>
     set(() => ({
       addFormData: {
-        name: "",
-        price: 0,
-        stock: 0,
-        type: "",
+        p_name: "",
+        p_price: 0,
+        p_stock: 0,
+        p_type: "",
       },
     })),
 }));
 
 const useUpdateFormStore = create((set) => ({
   updateFormData: {
-    id: 0,
-    name: "",
-    price: 0,
-    stock: 0,
-    type: "",
+    u_id: 0,
+    u_name: "",
+    u_price: 0,
+    u_stock: 0,
+    u_type: "",
   },
   setUpdateFormData: (field, value) =>
     set((state) => ({
