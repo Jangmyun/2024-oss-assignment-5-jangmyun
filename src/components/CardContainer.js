@@ -24,6 +24,7 @@ function CardContainer() {
             return (
               <ProductCard
                 key={item.product_name + index}
+                id={item.id}
                 name={item.product_name}
                 price={item.price}
                 stock={item.stock}
