@@ -2,17 +2,19 @@ import { create } from "zustand";
 
 const useAddFormStore = create((set) => ({
   addFormData: {
-    name: "",
-    price: 0,
-    stock: 0,
-    type: "Desktop",
+    p_name: "",
+    p_price: 0,
+    p_stock: 0,
+    p_type: "Desktop",
   },
   setAddFormData: (field, value) =>
     set((state) => ({
-      ...state.addFormData,
-      [field]: value,
+      addFormData: {
+        ...state.addFormData,
+        [field]: value,
+      },
     })),
-  resetFormData: () =>
+  resetAddFormData: () =>
     set(() => ({
       addFormData: {
         p_name: "",
