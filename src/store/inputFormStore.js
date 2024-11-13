@@ -35,8 +35,10 @@ const useUpdateFormStore = create((set) => ({
   },
   setUpdateFormData: (field, value) =>
     set((state) => ({
-      ...state.updateFormData,
-      [field]: value,
+      updateFormData: {
+        ...state.updateFormData,
+        [field]: value,
+      },
     })),
   setAllUpdateFormData: (newFormData) => set({ updateFormData: newFormData }),
 }));
