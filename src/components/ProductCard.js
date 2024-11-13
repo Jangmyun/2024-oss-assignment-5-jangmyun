@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useUpdateFormStore } from "../store/inputFormStore";
 import useModalStore from "../store/modalStore";
 import cardStyles from "../styles/Card.module.css";
@@ -6,6 +7,22 @@ import publicStyles from "../styles/public.module.css";
 function ProductCard({ id, name, price, stock, type }) {
   const { toggleModal, setModalOption } = useModalStore();
   const { setAllUpdateFormData } = useUpdateFormStore();
+
+  const deleteProduct = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.delete(
+        `https://67283138270bd0b97554a078.mockapi.io/product-manage/device/${id}`
+      );
+      if (!res) throw Error("500");
+
+      alert("Successfully Deleted!");
+    } catch (error) {
+      console.log(error);
+      alert("Delete Failed!!");
+    }
+  };
 
   return (
     <div className={cardStyles.cardContainer}>
@@ -31,7 +48,9 @@ function ProductCard({ id, name, price, stock, type }) {
         >
           Update
         </button>
-        <button className={publicStyles.button}>Delete</button>
+        <button className={publicStyles.button} onClick={deleteProduct}>
+          Delete
+        </button>
       </div>
     </div>
   );
