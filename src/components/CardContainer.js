@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import cardStyles from "../styles/Card.module.css";
 
-function CardContainer() {
-  const [productData, setProductData] = useState({});
-
+function CardContainer({ productData, setProductData }) {
   async function fetchProductData() {
     const { data } = await axios.get(
       "https://67283138270bd0b97554a078.mockapi.io/product-manage/device"
